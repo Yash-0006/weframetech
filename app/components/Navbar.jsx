@@ -3,13 +3,25 @@
 //Navbar component to visible in all pages
 
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
     const[isOpen,setIsOpen] = useState(true);   //for responsive nav bar in smaller screens
 
     const pathname = usePathname();
+
+    useEffect(() => {
+        const handleResize = () => {
+          if (window.innerWidth >= 1024) {
+            setIsOpen(true); // Show menu on large screens
+          }
+        };
+      
+        window.addEventListener('resize', handleResize);
+    
+        return () => window.removeEventListener('resize', handleResize);
+      }, []);
 
     //for routing of the sections in navbar
 

@@ -36,7 +36,6 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-
   return (
     <div>
 
