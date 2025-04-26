@@ -1,26 +1,25 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 :root {
-  --background: #ffffff;
+  --background: #f9fafb;
   --foreground: #171717;
+  --blue1: #0a5a7f;
+  --blue2: #27bbff;
+  --blue3: #97deff;
+  --border:#e1e1e1;
+  --secback:rgb(243 244 246);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* changing the variables color for dark theme */
+
+[data-theme="dark"] {
+  --background: #171717;
+  --foreground: #f9fafb;
+  --border:#64748b;
+  --secback:#949494;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+*{
+  font-family: Outfit;
 }
